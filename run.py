@@ -1,3 +1,5 @@
+from random import randint
+
 HIDDEN_BOARD = [[" "] * 8 for x in range(8)]
 GUESS_BOARD = [[" "] * 8 for x in range(8)]
 
@@ -15,7 +17,8 @@ def print_board(borad):
 
 
 def create_ships():
-    pass
+    for ship in range(5):
+        ship_row, ship_col = randint(0, 7), randint(0, 7)
 
 
 def get_ship_location():
