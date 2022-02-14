@@ -2,8 +2,8 @@ from random import randint
 
 board = []
 
-for x in range(8):
-    board.append(["O"] * 8)
+for x in range(6):
+    board.append(["O"] * 6)
 
 
 def print_board(board):
@@ -32,8 +32,7 @@ for turn in range(9):
     guess_row = int(input("Guess Row:"))
     guess_col = int(
         input("Guess Col:"))
-
-if guess_row == ship_row and guess_col == ship_col:
+    if guess_row == ship_row and guess_col == ship_col:
         print("Congratulations! You sunk my battleship!")
         break
     else:
@@ -44,7 +43,8 @@ if guess_row == ship_row and guess_col == ship_col:
         else:
             print("You missed my battleship!")
             board[guess_row][guess_col] = "X"
-    if turn == 8:
-        print("Game Over")
-    turn =+ 1
+
+if turn == 8:
+    print("Game Over")
+    turn = + 1
     print_board(board)
