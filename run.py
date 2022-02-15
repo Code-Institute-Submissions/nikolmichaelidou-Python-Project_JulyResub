@@ -27,30 +27,57 @@ ship_col = random_col(board)
 
 
 def game():
+    '''Game will start running'''
     for turn in range(10):
         print("Turn"), turn
-        guess_row = int(input("Guess Row:"))
-        guess_col = int(
-            input("Guess Col:"))
-        if guess_row == ship_row and guess_col == ship_col:
-            print("Congratulations! You sunk my battleship!")
-            break
-        else:
-            if (guess_row < 0 or guess_row > 8) or (guess_col < 0 or guess_col > 8):
-                print("Oops, that's not even in the ocean.")
-            elif(board[guess_row][guess_col] == "X"):
+
+        """ Validites if player has entered number from 0-8 """
+        valid_input = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+        valid_row = False
+        while not valid_row:
+            try:
+                guess_row = int(input("Guess Row (0-8):"))
+                while guess_row not in valid_input:
+                    print("Invalid Input. Please enter a number between 0-8")
+                    valid_row = True
+            except ValueError as error:
+                print("Invalid Input. Please enter a number between 0-8")
+                break
+
+        valid_col = False
+        while not valid_col:
+            try:
+                guess_col = int(input("Guess Col (0 - 8):"))
+                while guess_col not in valid_input:
+                    print("Invalid Input. Please enter a number between 0-8")
+                    valid_col = True
+            except ValueError as error:
+                print("Invalid Input. Please enter a number between 0-8")
+                break
+
+            if guess_row == ship_row and guess_col == ship_col:
+                print("Congratulations! You sunk my battleship!")
+                break
+
+            if(board[guess_row][guess_col] == "X"):
                 print("You guessed that one already.")
             else:
+                (board[guess_row][guess_col] == "X")
                 print("You missed my battleship!")
-                board[guess_row][guess_col] = "X"
+                break
+
     while True:
         answer = input("Do you want to play again?")
         if answer == 'yes':
-            play()
+            game()
         elif answer == 'no':
             break
         else:
             print("Do not understand. Please type 'yes' or 'no'")
+
+
+""" Player's turn """
 
 
 def game_turn():
@@ -58,14 +85,6 @@ def game_turn():
         print("Game Over")
         turn = + 1
         print_board(board)
-
-
-def valid_input():
-    while game():
-        if guess_col != int(input):
-            print("Wrong input. Only use numbers")
-        if guess_row != int(input):
-            print("Wrong input. Only use numbers")
 
 
 def main():
