@@ -43,7 +43,14 @@ def game():
             else:
                 print("You missed my battleship!")
                 board[guess_row][guess_col] = "X"
-    print_board(board)               
+    while True:
+        answer = input("Do you want to play again?")
+        if answer == 'yes':
+            play()
+        elif answer == 'no':
+            break
+        else:
+            print("Do not understand. Please type 'yes' or 'no'")
 
 
 def game_turn():
@@ -53,11 +60,12 @@ def game_turn():
         print_board(board)
 
 
-def valid_input(input):
-    if guess_col != int(input):
-        print("Wrong input. Only use numbers")
-    if guess_row != int(input):
-        print("Wrong input. Only use numbers")
+def valid_input():
+    while game():
+        if guess_col != int(input):
+            print("Wrong input. Only use numbers")
+        if guess_row != int(input):
+            print("Wrong input. Only use numbers")
 
 
 def main():
