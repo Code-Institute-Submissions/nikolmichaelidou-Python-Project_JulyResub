@@ -13,6 +13,9 @@ The rules:
 
 <hr>
 
+### Features
+
+<hr>
 ### Planning & Design
 
 <hr>
