@@ -14,9 +14,13 @@ The rules:
 <hr>
 
 ### Features
+![](/assets/imgs/Screenshot%20(101).png)
 
 <hr>
+
 ### Planning & Design
+For the game I wanted to go full on old school. Just a simple grid with Xs and Os.
+![luccidchart](assets/imgs/PP3%20Python.jpeg)
 
 <hr>
 
