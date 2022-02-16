@@ -15,17 +15,22 @@ The rules:
 
 ### Features
 
-![](assets/imgs/Screenshot%20(114).png)
 - The grid
   - It is 8*8
   - The Os represent the rows and column or the ocean
+![](assets/imgs/Screenshot%20(114).png)
+
+- Welcome message
+  - A brief welcome message will appear welcoming the player
+  - And also a brief message mentioning how many turns the player has 
+![](assets/imgs/Screenshot%20(116).png)
 
 <hr>
 
 ### How to play
 - The player starts the game with 10 turns or guess
 - The game will first ask the player to guess the row, it only accepts inputs of 0-8, then it will ask the player to guess the column
-- 
+- If the player guesses the same combination a message will pop saying "You guessed that one already."
 <hr>
 
 ### Bugs & Fixes

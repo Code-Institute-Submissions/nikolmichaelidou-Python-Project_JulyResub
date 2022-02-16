@@ -89,7 +89,7 @@ def game_turn():
 
 def main():
     print("WELCOME TO BATTLESHIP GAME!")
-    print("You have 8 turns to try and sink my ship 😈")
+    print("You have 10 turns to try and sink my ship 😈")
     game()
     game_turn()
 
