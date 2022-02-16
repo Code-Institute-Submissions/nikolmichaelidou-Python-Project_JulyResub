@@ -3,13 +3,9 @@
 ## Description  
 
  A retro-looking, simple battleship game.
-The rules:
-
-- O represents the ocean on the board
-- X means that the player has missed
-- The player can only have 10 turns. If the player has run out of turns a message will show saying "Game Over"
-- If the player has guessed the same row and column, a message will appear "You guessed that one already" and they will lose a turn
-- The player can only use numbers from 0 - 8 to guess rows and columns
+It is a Python terminal game. Made to look and feel like one those first games.
+The goal is to guess the location the battleship. The player has only 10 turns to do so.
+It is aimed at any specific audience. Any one can enjoy!
 
 <hr>
 
@@ -32,9 +28,13 @@ The rules:
 <hr>
 
 ### How to play
+The game is very easy to play. Requires very minimal controls. The player simply types numbers.
 - The player starts the game with 10 turns or guess
-- The game will first ask the player to guess the row, it only accepts inputs of 0-8, then it will ask the player to guess the column
-- If the player guesses the same combination a message will pop saying "You guessed that one already."
+- The game will first ask the player to guess the row, it only accepts inputs of 0-8, then it will ask the player to guess the column.
+- If the player guesses the same combination a message will pop saying "You guessed that one already." and they will lose one turn
+- The game ends when the player runs out of turns or when they guess correctly the location of the battleship and sink it.
+- The player will have the option to play again, by typing 'yes' or 'no'.
+  
 <hr>
 
 ### Bugs & Fixes
@@ -52,9 +52,16 @@ I have manually tested the game and these are the following bugs I've encountere
 ### Planning & Design
 
 For the game, I wanted to go full-on old school. Just a simple grid with Xs and Os.
-- Firstly, was dumb down the logic of the game, make as simple as possible so it will be easier to build into as the project progessed.
-- Secondly
+- The logic of the game was dumb down, make as simple as possible so it will be easier to build into as the project progessed.
+
 ![luccidchart](assets/imgs/PP3%20Python.jpeg)
+
+<hr>
+
+## Validator testing
+- PEP8 was used to validate the code
+  - It return no erros
+![](assets/imgs/Screenshot%20(121).png)
 
 <hr>
 
