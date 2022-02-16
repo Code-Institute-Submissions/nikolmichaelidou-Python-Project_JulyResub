@@ -34,7 +34,7 @@ The rules:
 <hr>
 
 ### Bugs & Fixes
-
+I have manually tested the game and these are the following bugs I've encountered: 
 - Guess_row infinity loop
   - Even if the player inputs numbers, it will keep asking for an input. The player will have to press "enter" twice in order for the loop to stop and continue.
     - I have not been able to find a fix for this bug
@@ -47,9 +47,14 @@ For the game I wanted to go full on old school. Just a simple grid with Xs and O
 
 <hr>
 
+## Deployment
+
 ## Credit
 
 ### Programs used
+ - Heroku was used to deploy the game to the web.
+ - Xbox Games Bar was used to record screen and then used clideo.com was used in order to crop and convert my video
+ - LucidChart was used to create the flow chart
 
 #### Notetaking & Planning
 
@@ -58,12 +63,10 @@ For the game I wanted to go full on old school. Just a simple grid with Xs and O
 
 #### Langueges used
 
-- Python
-  - The Battleship was created using Python.  
+- Python was used to create the game. 
 
 #### Code 
 
-- Code was inspired by this tutorial <https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=732s> by Knowledge Mavens
+- Code was inspired by this tutorial <https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=732s> by Knowledge Mavens.
 
-#### Gif
-- clideo.com was used in order to crop and convert my video
+
