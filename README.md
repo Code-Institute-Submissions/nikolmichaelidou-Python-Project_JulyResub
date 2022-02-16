@@ -18,6 +18,13 @@ The rules:
 
 <hr>
 
+### Bugs & Fixes
+
+- Guess_row infinity loop
+  - Even if the player inputs numbers, it will keep asking for an input. The player will have to press "enter" twice in order for the loop to stop and continue.
+    - I have not been able to find a fix for this bug 
+![](assets/imgs/pp3_bug_gif.gif)
+
 ### Planning & Design
 For the game I wanted to go full on old school. Just a simple grid with Xs and Os.
 ![luccidchart](assets/imgs/PP3%20Python.jpeg)
@@ -25,6 +32,8 @@ For the game I wanted to go full on old school. Just a simple grid with Xs and O
 <hr>
 
 ## Credit
+
+### Programs used
 
 ### Langueges used
 - Python
