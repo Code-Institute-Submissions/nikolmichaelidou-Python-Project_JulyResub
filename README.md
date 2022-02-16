@@ -50,10 +50,10 @@ I have manually tested the game and these are the following bugs I've encountere
 ![](assets/imgs/Screenshot%20(119).png)
 
 ### Planning & Design
-
+Rough outline of the game:
+![](assets/imgs/PP3-rough-outline.jpg)
 For the game, I wanted to go full-on old school. Just a simple grid with Xs and Os.
-- The logic of the game was dumb down, make as simple as possible so it will be easier to build into as the project progessed.
-
+- The logic of the game was dumb down, make as simple as possible so it will be easier to build into as the project progessed. As shown in the flowchart:
 ![luccidchart](assets/imgs/PP3%20Python.jpeg)
 
 <hr>
@@ -79,7 +79,6 @@ The below steps were followed to deploy this project to Heroku:
 ## Credit
 
 ### Programs used
- - Heroku was used to deploy the game to the web.
  - Xbox Games Bar was used to record the screen and then used clideo.com was used to crop and convert my video
  - LucidChart was used to create the flow chart
 
