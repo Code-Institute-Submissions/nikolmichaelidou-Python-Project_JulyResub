@@ -26,7 +26,8 @@ The rules:
 ![](assets/imgs/Screenshot%20(116).png)
 
 - Error messages
- - 
+  - Error message will appear if the player enter a value that is a number
+![](assets/imgs/Screenshot%20(120).png)
 
 <hr>
 
@@ -42,6 +43,11 @@ I have manually tested the game and these are the following bugs I've encountere
   - Even if the player inputs numbers, it will keep asking for input. The player will have to press "enter" twice for the loop to stop and continue.
     - I have not been able to find a fix for this bug
 ![](assets/imgs/pp3_bug_gif.gif)
+
+- 'yes' or 'no' bug
+  - In order for the function it the player will either have to type 'yes' or 'no' without space. Which looks weird.
+  - The bug was fixed by simply fixing a small typo in the code
+![](assets/imgs/Screenshot%20(119).png)
 
 ### Planning & Design
 
