@@ -69,9 +69,9 @@ def game():
 
     while True:
         answer = input("Do you want to play again?")
-        if answer == 'yes':
+        if answer == ' yes':
             game()
-        elif answer == 'no':
+        elif answer == ' no':
             break
         else:
             print("Do not understand. Please type 'yes' or 'no'")
