@@ -1,97 +1,101 @@
-from random import randint
-
-board = []
-
-for x in range(9):
-    board.append(["O"] * 9)
+import random
+import time
 
 
-def print_board(board):
-    for row in board:
-        print((" ").join(row))
+# Global variable for grid
+grid = [[]]
+# Global variable for grid size
+grid_size = 10
+# Global variable for number of ships to place
+num_of_ships = 2
+# Global variable for bullets left
+bullets_left = 50
+# Global variable for game over
+game_over = False
+# Global variable for number of ships sunk
+num_of_ships_sunk = 0
+# Global variable for ship positions
+ship_positions = [[]]
+# Global variable for alphabet
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
-print_board(board)
+def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
+    """Will check the row or column to see if it is safe to place a ship there"""
+    global grid
+    global ship_positions
 
-
-def random_row(board):
-    return randint(0, len(board) - 1)
-
-
-def random_col(board):
-    return randint(0, len(board[0]) - 1)
-
-
-ship_row = random_row(board)
-ship_col = random_col(board)
-
-
-def game():
-    '''Game will start running'''
-    for turn in range(10):
-        print("Turn"), turn
-
-        """ Validites if player has entered number from 0-8 """
-        valid_input = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-
-        valid_row = False
-        while not valid_row:
-            try:
-                guess_row = int(input("Guess Row (0-8):"))
-                while guess_row not in valid_input:
-                    print("Invalid Input. Please enter a number between 0-8")
-                    valid_row = True
-            except ValueError as error:
-                print("Invalid Input. Please enter a number between 0-8")
+    all_valid = True
+    for r in range(start_row, end_row):
+        for c in range(start_col, end_col):
+            if grid[r][c] != ".":
+                all_valid = False
                 break
-
-        valid_col = False
-        while not valid_col:
-            try:
-                guess_col = int(input("Guess Col (0 - 8):"))
-                while guess_col not in valid_input:
-                    print("Invalid Input. Please enter a number between 0-8")
-                    valid_col = True
-            except ValueError as error:
-                print("Invalid Input. Please enter a number between 0-8")
-                break
-
-            if guess_row == ship_row and guess_col == ship_col:
-                print("Congratulations! You sunk my battleship!")
-                break
-
-            if(board[guess_row][guess_col] == "X"):
-                print("You guessed that one already.")
-            else:
-                (board[guess_row][guess_col] == "X")
-                print("You missed my battleship!")
-                break
-
-    while True:
-        answer = input("Do you want to play again?")
-        if answer == ' yes':
-            game()
-        elif answer == ' no':
-            break
-        else:
-            print("Do not understand. Please type 'yes' or 'no'")
+    if all_valid:
+        ship_positions.append([start_row, end_row, start_col, end_col])
+        for r in range(start_row, end_row):
+            for c in range(start_col, end_col):
+                grid[r][c] = "O"
+    return all_valid
 
 
-""" Player's turn """
+def try_to_place_ship_on_grid(row, col, direction, length):
+    """Based on direction will call helper method to try and place a ship on the grid"""
+    global grid_size
+
+    start_row, end_row, start_col, end_col = row, row + 1, col, col + 1
+    if direction == "left":
+        if col - length < 0:
+            return False
+        start_col = col - length + 1
+
+    elif direction == "right":
+        if col + length >= grid_size:
+            return False
+        end_col = col + length
+
+    elif direction == "up":
+        if row - length < 0:
+            return False
+        start_row = row - length + 1
+
+    elif direction == "down":
+        if row + length >= grid_size:
+            return False
+        end_row = row + length
+
+    return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
 
 
-def game_turn():
-    if turn == 9:
-        print("Game Over")
-        turn = + 1
-        print_board(board)
+def create_grid():
+    """Will create a 10x10 grid and randomly place down ships
+       of different sizes in different directions"""
+    global grid
+    global grid_size
+    global num_of_ships
+    global ship_positions
+
+    random.seed(time.time())
+
+    rows, cols = (grid_size, grid_size)
+
+    grid = []
+    for r in range(rows):
+        row = []
+        for c in range(cols):
+            row.append(".")
+        grid.append(row)
+
+    num_of_ships_placed = 0
+
+    ship_positions = []
+
+    while num_of_ships_placed != num_of_ships:
+        random_row = random.randint(0, rows - 1)
+        random_col = random.randint(0, cols - 1)
+        direction = random.choice(["left", "right", "up", "down"])
+        ship_size = random.randint(3, 5)
+        if try_to_place_ship_on_grid(random_row, random_col, direction, ship_size):
+            num_of_ships_placed += 1
 
 
-def main():
-    print("WELCOME TO BATTLESHIP GAME!")
-    print("You have 10 turns to try and sink my ship 😈")
-    game()
-    game_turn()
-
-
-main()

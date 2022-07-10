@@ -11,19 +11,18 @@ It is aimed at any specific audience. Any one can enjoy!
 
 ### Features
 
-- The grid
-  - It is 8*8
-  - The Os represent the rows and columns or the ocean
-![](assets/imgs/Screenshot%20(114).png)
-
-- Welcome message
-  - A brief welcome message will appear welcoming the player
-  - And also a brief message mentioning how many turns the player has 
-![](assets/imgs/Screenshot%20(116).png)
-
-- Error messages
-  - Error message will appear if the player enter a value that is a number
-![](assets/imgs/Screenshot%20(120).png)
+- 10x10 grid 
+- 8 ships of variable length randomly placed about
+- Player has 50 bullets to take down the ships that are placed down
+  - Player can choose a row and column such as A3 to indicate where to shoot
+    - For every shot that hits or misses it will show up in the grid
+A ship cannot be placed diagonally, so if a shot hits the rest of the ship is in one of 4 directions, left, right, up, and down
+If all ships are unearthed before using up all bullets, you win else, you lose
+Below are symbols used to represent obstacles or components in the game:
+- "." = water or empty space
+- "O" = part of ship
+- "X" = part of ship that was hit with a bullet
+- "#" = water that was shot with a bullet, a miss because it hit no ship
 
 <hr>
 
