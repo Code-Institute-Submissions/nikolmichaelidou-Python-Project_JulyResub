@@ -65,7 +65,7 @@ For the game, I wanted to go full-on old school. Just a simple grid with Xs and 
   - In order to make sure there were no issues with the code:
     - I've tested every section of the code before committing
       - The only error that was returned was that the comments were too long
-        - ![](/assets/imgs/Screenshot%20(135).png)
+ ![](/assets/imgs/Screenshot%20(136).png)
 
 <hr>
 
@@ -78,7 +78,7 @@ The below steps were followed to deploy this project to Heroku:
 - Still in the "Settings", navigate to Buildpacks and add buildpacks for Python and NodeJS. They have to be in order, Python first, then NodeJS.
 - Go to "Deploy". Scroll down and set Deployment Method to GitHub. Once GitHub is chosen, find your repository and connect it to Heroku.
 - Scroll down to Manual Deploy, make sure the "main" branch is selected and click "Deploy Branch".
-- The deployed app can be found here.
+- The deployed app can be found here <https://battleshipci.herokuapp.com/>
 
 ## Credit
 
