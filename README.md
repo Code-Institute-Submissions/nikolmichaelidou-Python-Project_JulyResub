@@ -59,8 +59,10 @@ For the game, I wanted to go full-on old school. Just a simple grid with Xs and 
 
 ## Validator testing
 - PEP8 was used to validate the code
-  - It return no erros
-![](assets/imgs/Screenshot%20(121).png)
+  - In order to make sure there were no issues with the code:
+    - I've tested every section of the code before committing
+      - The only error that was returned was that the comments were too long
+        - ![](/assets/imgs/Screenshot%20(135).png)
 
 <hr>
 
@@ -92,4 +94,7 @@ The below steps were followed to deploy this project to Heroku:
 
 #### Code 
 
-- Code was inspired by this tutorial <https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=732s> by Knowledge Mavens.
+- Code was inspired by this tutorial 
+  -  <https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=732s>
+  -  <https://www.youtube.com/watch?v=alJH_c9t4zw> 
+by Knowledge Mavens.
