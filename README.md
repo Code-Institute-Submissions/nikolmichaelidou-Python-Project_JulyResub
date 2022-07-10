@@ -28,12 +28,8 @@ Below are symbols used to represent obstacles or components in the game:
 
 ### How to play
 The game is very easy to play. Requires very minimal controls. The player simply types numbers.
-- The player starts the game with 10 turns or guess
-- The game will first ask the player to guess the row, it only accepts inputs of 0-8, then it will ask the player to guess the column.
-- If the player guesses the same combination a message will pop saying "You guessed that one already." and they will lose one turn
-- The game ends when the player runs out of turns or when they guess correctly the location of the battleship and sink it.
-- The player will have the option to play again, by typing 'yes' or 'no'.
-  
+- The player only has 50 bullets
+-   
 <hr>
 
 ### Bugs & Fixes
@@ -94,7 +90,7 @@ The below steps were followed to deploy this project to Heroku:
 
 #### Code 
 
-- Code was inspired by this tutorial 
+- Code was inspired by these tutorials by Knowledge Mavens. 
   -  <https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=732s>
   -  <https://www.youtube.com/watch?v=alJH_c9t4zw> 
-by Knowledge Mavens.
+
