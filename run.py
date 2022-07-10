@@ -1,7 +1,6 @@
 import random
 import time
 
-
 # Global variable for grid
 grid = [[]]
 # Global variable for grid size
@@ -67,32 +66,36 @@ def try_to_place_ship_on_grid(row, col, direction, length):
     return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
 
 
-def try_to_place_ship_on_grid(row, col, direction, length):
-    """Based on direction will call helper method to try and place a ship on the grid"""
+def create_grid():
+    """Will create a 10x10 grid and randomly place down ships
+       of different sizes in different directions"""
+    global grid
     global grid_size
+    global num_of_ships
+    global ship_positions
 
-    start_row, end_row, start_col, end_col = row, row + 1, col, col + 1
-    if direction == "left":
-        if col - length < 0:
-            return False
-        start_col = col - length + 1
+    random.seed(time.time())
 
-    elif direction == "right":
-        if col + length >= grid_size:
-            return False
-        end_col = col + length
+    rows, cols = (grid_size, grid_size)
 
-    elif direction == "up":
-        if row - length < 0:
-            return False
-        start_row = row - length + 1
+    grid = []
+    for r in range(rows):
+        row = []
+        for c in range(cols):
+            row.append(".")
+        grid.append(row)
 
-    elif direction == "down":
-        if row + length >= grid_size:
-            return False
-        end_row = row + length
+    num_of_ships_placed = 0
 
-    return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
+    ship_positions = []
+
+    while num_of_ships_placed != num_of_ships:
+        random_row = random.randint(0, rows - 1)
+        random_col = random.randint(0, cols - 1)
+        direction = random.choice(["left", "right", "up", "down"])
+        ship_size = random.randint(3, 5)
+        if try_to_place_ship_on_grid(random_row, random_col, direction, ship_size):
+            num_of_ships_placed += 1
 
 
 def print_grid():
@@ -215,3 +218,28 @@ def check_for_game_over():
     elif bullets_left <= 0:
         print("Sorry, you lost! You ran out of bullets, try again next time!")
         game_over = True
+
+
+def main():
+    """Main entry point of application that runs the game loop"""
+    global game_over
+
+    print("-----Welcome to Battleships-----")
+    print("You have 50 bullets to take down 8 ships, may the battle begin!")
+
+    create_grid()
+
+    while game_over is False:
+        print_grid()
+        print("Number of ships remaining: " +
+              str(num_of_ships - num_of_ships_sunk))
+        print("Number of bullets left: " + str(bullets_left))
+        shoot_bullet()
+        print("----------------------------")
+        print("")
+        check_for_game_over()
+
+
+if __name__ == '__main__':
+
+    main()

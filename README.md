@@ -16,8 +16,7 @@ It is aimed at any specific audience. Any one can enjoy!
 - Player has 50 bullets to take down the ships that are placed down
   - Player can choose a row and column such as A3 to indicate where to shoot
     - For every shot that hits or misses it will show up in the grid
-A ship cannot be placed diagonally, so if a shot hits the rest of the ship is in one of 4 directions, left, right, up, and down
-If all ships are unearthed before using up all bullets, you win else, you lose
+
 Below are symbols used to represent obstacles or components in the game:
 - "." = water or empty space
 - "O" = part of ship
@@ -29,7 +28,10 @@ Below are symbols used to represent obstacles or components in the game:
 ### How to play
 The game is very easy to play. Requires very minimal controls. The player simply types numbers.
 - The player only has 50 bullets
--   
+- There are two ships on the grid
+  - The player must sink them before they run out of bullets
+- The player can guess the placement of this ships using letters and numbers, for example such us A5  
+
 <hr>
 
 ### Bugs & Fixes
@@ -43,6 +45,11 @@ I have manually tested the game and these are the following bugs I've encountere
   - In order for the function it the player will either have to type 'yes' or 'no' without space. Which looks weird.
   - The bug was fixed by simply fixing a small typo in the code
 ![](assets/imgs/Screenshot%20(119).png)
+
+- The bugs have been fixed:
+  - Rewrote the entire code, the main changes are
+    - From a 8x8 grid I made it to a 10x10 grid
+    - The player can see a part of the ships now
 
 ### Planning & Design
 Rough outline of the game:
